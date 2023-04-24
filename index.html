@@ -93,11 +93,30 @@
         justify-content: center;
       }
     </style>
+    <script>
+      $(document).ready(function () {
+        fetch("http://spartacodingclub.shop/sparta_api/weather/tokyo")
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            let a = data["city"];
+            $("#city").text(a);
+            let number = data["temp"];
+            $("#temp").text(number);
+            let b = data["clouds"];
+            $("#clouds").text(b);
+          });
+      });
+    </script>
   </head>
 
   <body>
     <div class="mytitle">
       <h1>私の好きなアルバム</h1>
+
+      <div>現在<span id="city"></span>の気温 : <span id="temp">20</span>度</div>
+      <div>降水確率<span id="clouds"></span></div>
+
       <button>Save a new music</button>
     </div>
     <div class="mypost">
