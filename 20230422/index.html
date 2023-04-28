@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    // ヘッダーに Content-Security-Policy を設定する
-const cspHeader = "upgrade-insecure-requests";
-document.querySelector("meta[http-equiv='Content-Security-Policy']").setAttribute("content", cspHeader);
+    Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline';
 
         <meta charset="utf-8" />
     <meta
